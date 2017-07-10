@@ -1,0 +1,357 @@
+
+.form-group{
+
+	padding: 10px;
+}
+.first-page-body{background-color: black;}
+
+.address, .price, .rating {
+	color: rgb(67,125,280) ;
+	font-size: 14px;
+	padding:10px;
+	margin-left: 20px;
+
+}
+.brand{
+	font-family: 'Lobster', cursive;
+
+}
+
+.or { 
+
+font-size: 24px;
+color: rgb(67,125,280);
+margin-bottom: 30px;
+
+ }
+
+
+.address{
+
+	margin-top: 30px;
+}
+
+.name{
+	color: rgb(67,125,280);
+	margin-top: 60px;
+	font-size: 24px;
+	margin-bottom: 100px;
+}
+.reveal { 
+	margin-bottom: 50px;
+	font-size: 12px;
+	color: white ;
+	margin: 40px;
+
+ }
+ .reveal-btn, .choose-new-btn {
+ 	
+ 	font-size: 18px;
+ }
+
+.thumbnail h2 { 
+	
+	padding-top: 10px;
+	height: 300px;
+
+ }
+.multiPlaces {
+	height: 300px;
+
+	background-color: slategrey;
+	border: 1px solid white;
+	border-radius: 10px;
+	padding-top: 10px;
+
+}
+.display-body{
+	background-color: lightgrey;
+}
+.theMap{
+	background-color: lightgrey;
+}
+.here{
+	margin-top: 30px;
+	height: 50px;
+
+}
+.resPics {
+	height: 150px;
+
+	overflow: hidden;
+	
+	padding: 0px;
+
+}
+
+
+ .city-image{
+ 	background-image: url("http://www.accessbackgroundcheck.com/sitebuildercontent/sitebuilderpictures/dallas.jpg");
+	height: 400px;
+	color: white;
+
+ }
+.start{
+	margin-top: 25%;
+
+} 
+
+.icons {
+
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+
+
+.material-icons{ 
+border: 1px solid rgb(1,1,1) ;
+font-size: 50px; 
+background-color: rgba(254, 254, 254, 0.7);
+border-radius: 100px;
+padding:20px;
+color: rgb(20,20,20);
+
+}
+.picture { position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(rgba(1,1,1,0.6), rgba(1,1,1, 0.6)), url("http://edtimes.in/wp-content/uploads/2016/10/hangover-free-alcohol.jpg"); 
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+ }
+
+
+.button2{
+	border: 1px solid white;
+	color: white;
+	background-color: rgb(33, 33, 33);
+	height: 50px;
+	width: 200px;
+	margin-top: 50px;
+	font-size: 18px;
+	margin-bottom: 20px;
+	border-radius: 30px;
+
+}
+.button1 {
+	border: 1px solid white;
+	border-radius: 30px;
+	color: white;
+	background-color: rgb(13, 179, 220);
+	height: 50px;
+	width: 200px;
+	margin-top: 50px;
+	font-size: 18px;
+
+}
+.on-load{
+	position: ;
+	top: 0;
+	left: 0;
+	
+}
+.start-under { 
+border: 1px solid rgb(67,125,280);
+ }
+ 
+ }
+ .bottom{
+ 	margin-top: 70px;
+
+ }
+
+.inside{
+	
+	color: white;
+	
+	margin-top: 5px;
+	
+	border-radius: 10px;
+
+}
+
+@media only screen and (max-width: 768px){
+	.start{
+		margin-top: 50px;
+	}
+	
+	
+
+
+}	
+.col1 h3{
+	color: white;
+	background-color: rgb(30,30,30);
+	margin-bottom: 0px;
+	padding: 10px;
+	
+}
+.col2 h3{
+	color: white;
+	background-color: rgb(30,30,30);
+	margin-bottom: 0px;
+	padding: 10px;
+	
+}
+.col3 h3{
+	color: white;
+	background-color: rgb(30,30,30);
+	margin-bottom: 0px;
+	padding: 10px;
+	
+
+
+	
+}
+.col4 h3{
+	color: white;
+	background-color:rgb(30,30,30);
+	margin-bottom: 0px;
+	padding: 10px;
+	
+}
+.directions{
+	margin-top: 100px;
+}
+.col1 p{
+	background-color: white;
+	color: rgb(30,30,30);
+	padding: 10px;
+	border: 1px solid rgb(30,30,30);
+	font-size: 24px;
+	height: 150px;
+	
+}
+.col2 p{
+	background-color: white;
+	color: rgb(30,30,30);
+	padding: 10px;
+	border: 1px solid rgb(30,30,30);
+	font-size: 24px;
+	height: 150px;
+
+	
+}
+.col3 p{
+	background-color: white;
+	color: rgb(30,30,30);
+	padding: 10px;
+	border: 1px solid rgb(30,30,30);
+	font-size: 24px;
+	height: 150px;
+	
+}
+.col4 p{
+	background-color: white;
+	color:rgb(30,30,30);
+	padding: 10px;
+	border: 1px solid rgb(30,30,30);
+	font-size: 24px;
+	height: 150px;
+	
+}
+.directions-title h1{
+	color: black;
+	margin-bottom: 50px;
+	font-size: 40px;
+}
+.navbar-inverse .navbar-brand {
+	color: white;
+	
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+   background-color: white;
+
+	}
+
+@media only screen and (max-width: 992px){
+.col1 p {
+	height: auto;
+}
+.col2 p {
+	height: auto;
+}
+.col3 p {
+	height: auto;
+}
+.col4 p {
+	height: auto;
+}
+
+}
+h1, h4 {
+  margin: 0 auto;
+  color: black;
+  height: 75px;
+  width: 400px;
+  margin-top: 20px;
+  font-size: 24px;
+  color: white;
+}
+#display-city{
+	margin: 0px;
+	padding: 0px;
+}
+
+#question0, #question1, #question01, #question3, #finish, #question11, #question02, #question03 {
+   margin:20px;
+  background-color: rgb(30,30,30);
+  height:450px;
+  padding:40px;
+  border-radius:7px;
+  text-align:center;
+  border: 1px solid white;
+}
+label{
+	color: white;
+}
+
+#myCarousel {
+   margin-top:100px;
+   height:500px;
+}
+
+.lets-go {
+   margin-top:10%;
+}
+
+.form-control {
+    width:450px;
+    margin:0 auto;
+}
+
+#map-canvas {
+	height:500px;
+	width:75%;
+	margin:0 auto;
+	border-radius:5px;
+}
+#map{
+	margin-right: 100px;
+	margin-left: 100px;
+}
+.btn-circle1{ 
+	display: inline-flex;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+  margin: 10px;
+  text-align: center;
+}
+.btnHtml{
+	margin-left: 0.7em;
+}
+
+ 
