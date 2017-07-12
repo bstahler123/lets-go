@@ -1,0 +1,24 @@
+{
+  "name": "letsgo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bstahler123/lets-go.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bstahler123/lets-go/issues"
+  },
+  "homepage": "https://github.com/bstahler123/lets-go#readme",
+  "engines": {
+    "node": "7.8.0",
+    "npm": "4.2.0"
+,
+    "yarn": "0.21.3" }
+}
