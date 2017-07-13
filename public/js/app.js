@@ -6,28 +6,10 @@ $(document).ready(function() {
     var cityInput;
     var select;
 
-    // this is the function we check the feature that the user wants use
 
-    var checkFeature = function() {
-        var getFeature = document.getElementById('sel0').value;
-        console.log(getFeature);
-        if (getFeature === "3") {
-            $(".test12").attr("data-slide-to", "2");
 
-            console.log(getFeature);
-        } else if (getFeature === "2") {
-            $(".test12").attr("data-slide-to", "1");
-        }
-        if (getFeature === "4"){
-            $(".test12").attr("data-slide-to", "6")
-        }
 
-    };
-    // here is the button that runs the checkFeature function
-    $(".test12").on("click", function() {
-        checkFeature();
-    });
-
+ 
     // Here we run the function that gets the input of they user and finds the lat and long of the city
 
     $(".find_city").click(function() {
@@ -191,8 +173,12 @@ function initMapNearMe(){
         });
 }
 
+     // Getting the distance selected by the user
 
-
+        $(".radius").on("click", function(){
+        distance = $(this).val();
+                console.log(distance);
+        });  
 
   // function to find random resturant by geo location
 
@@ -207,7 +193,10 @@ function initMapNearMe(){
             var longitude = parseFloat(position.coords.longitude);
             var lowPrice = document.getElementById('lowPrice').value;
             var highPrice = document.getElementById('highPrice').value;
-            var distance = document.getElementById('sel1').value;
+            // var distance = document.getElementById('sel1').value;
+
+
+             
 
             var uluru = { lat: latitude, lng: longitude };
             var map = new google.maps.Map(document.getElementById('map'), {

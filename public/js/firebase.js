@@ -103,16 +103,14 @@ function initApp() {
             });
             // [START_EXCLUDE]
             $("#user-picture").html('<img src="' + photoURL + '">');
-            $("#save").show();
-            $("#load").show();
+         
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in.';
             // [END_EXCLUDE]
         } else {
             // User is signed out.
             // [START_EXCLUDE]
             $("#user-picture").empty();
-            $("#save").hide();
-            $("#load").hide();
+           
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed out.';
             // [END_EXCLUDE]
         }
