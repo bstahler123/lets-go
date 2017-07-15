@@ -369,7 +369,7 @@ display: inline-flex;
 	color: white;
 	font-size: 18px;
  }
- .radius{
+ .radius, .highPrice, .lowPrice{
  	width: 90px;
   height: 90px;
   padding: 10px 16px;
@@ -380,7 +380,15 @@ display: inline-flex;
   margin: 20px;
   border-color: black;
   color: black;
+  font-weight: bold;
 
 
 
  }
+
+ #sliderVal {
+ 	color: white;
+ 	font-size: 20px;
+ }
+
+

@@ -5,6 +5,9 @@ $(document).ready(function() {
     var distance;
     var cityInput;
     var select;
+    var highPrice;
+    var lowPrice;
+
 
 
 
@@ -22,8 +25,7 @@ $(document).ready(function() {
     function initMapByLocation(){
 
 
-        var lowPrice2 = document.getElementById('lowPrice2').value;
-        var highPrice2 = document.getElementById('highPrice2').value;
+  
        
 
       // actually getting location of city typed in
@@ -49,8 +51,8 @@ $(document).ready(function() {
                 var request = {
                     location: uluru,
                     radius: 40000,
-                    minPriceLevel: lowPrice2,
-                    maxPriceLevel: highPrice2,
+                    minPriceLevel: lowPrice,
+                    maxPriceLevel: highPrice,
 
                     openNow: true,
                     keyword: ['restaurant']
@@ -101,8 +103,7 @@ $(document).ready(function() {
 function initMapNearMe(){
 
 
-        var lowPrice2 = document.getElementById('lowPrice2').value;
-        var highPrice2 = document.getElementById('highPrice2').value;
+       
        
 
 
@@ -125,8 +126,8 @@ function initMapNearMe(){
                 var request = {
                     location: uluru,
                     radius: 40000,
-                    minPriceLevel: lowPrice3,
-                    maxPriceLevel: highPrice3,
+                    minPriceLevel: lowPrice,
+                    maxPriceLevel: highPrice,
 
                     openNow: true,
                     keyword: ['restaurant']
@@ -172,13 +173,37 @@ function initMapNearMe(){
             
         });
 }
+        // lets go scroll to map
 
-     // Getting the distance selected by the user
+        $(document).on('click', '.go, .go2, .go3', function(event) {
+
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+});
+
+    // Getting the distance selected by the user
 
         $(".radius").on("click", function(){
         distance = $(this).val();
                 console.log(distance);
         });  
+
+    // Getting the Price range from the user
+
+    $(".lowPrice").on("click", function(){
+        lowPrice = $(this).val();
+                console.log(lowPrice);
+        
+        });  
+
+    $(".highPrice").on("click", function(){
+       highPrice = $(this).val();
+                console.log(highPrice);
+        
+        });  
+
 
   // function to find random resturant by geo location
 
@@ -191,8 +216,7 @@ function initMapNearMe(){
 
             var latitude = parseFloat(position.coords.latitude);
             var longitude = parseFloat(position.coords.longitude);
-            var lowPrice = document.getElementById('lowPrice').value;
-            var highPrice = document.getElementById('highPrice').value;
+       
             // var distance = document.getElementById('sel1').value;
 
 
