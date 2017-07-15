@@ -71,8 +71,8 @@ $(document).ready(function() {
                             position:results[i].geometry.location
 
                         });
-
-                            var pictures = $("<div class='col-md-2 col-sm-4 col-xs-12 thumbnail multiPlaces'><div class='resPics'><img src='" + results[i].photos[0].getUrl({ 'maxWidth': 175, 'maxHeight': 175 }) + "'></div><div class='here'>Address:  " + results[i].vicinity + "Price:  " + results[i].price_level + "Rating:  " + results[i].rating + " </div><div class='btn btn-primary btn-circle1'></div><div class='btn btn-info btn-circle1'></div><div class='btn btn-success btn-circle1'></div></div>");
+                            var directions = "https://www.google.com/maps/dir//" + results[i].vicinity;
+                            var pictures = $("<div class='col-md-2 col-sm-4 col-xs-12 thumbnail multiPlaces'><div class='resPics'><img src='" + results[i].photos[0].getUrl({ 'maxWidth': 175, 'maxHeight': 175 }) + "'></div><div class='here'>Address:  " + results[i].vicinity + "Price:  " + results[i].price_level + "Rating:  " + results[i].rating + " </div><a href='" + directions + "' ><div class='btn btn-primary btn-circle1'></div></a><div class='btn btn-info btn-circle1'></div><div class='btn btn-success btn-circle1'></div></div>");
                             var place = results[i];
                             console.log(results[i]);
                             console.log(pictures);
