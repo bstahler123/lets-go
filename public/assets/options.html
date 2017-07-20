@@ -37,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand brand" href="../index.html">Lets Go!</a>
+                <a class="navbar-brand brand" href="../index.html">Let's Go!</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -67,6 +67,18 @@
                 </div>
             </div>
         </div>
+        <div class="row filter-display text-center">
+            <div class="col-xs-3 feature-picked">
+           
+            </div>
+
+            <div class="col-xs-3 distance-picked">
+            </div>
+            <div class="col-xs-3 min-price-picked">
+            </div>
+            <div class="col-xs-3 max-price-picked">
+            </div>
+        </div>
         <!--Modal ends -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
             <!-- Indicators -->
@@ -80,15 +92,15 @@
                         <br>
                         <div class="options">
                             <p class="options-header"> Find one for me</p class="">
-                            <div class="btn options" href="#myCarousel" data-slide-to="1"><i class="material-icons features icons1">location_searching</i></div>
+                            <div class="btn options feature1" href="#myCarousel" data-slide-to="1"><i class="material-icons features icons1">location_searching</i></div>
                         </div>
                         <div class="options">
                             <p class="options-header">Explore by location
-                                <div class="btn options" href="#myCarousel" data-slide-to="2"><i class="material-icons features icons1">location_on</i></div>
+                                <div class="btn options feature2" href="#myCarousel" data-slide-to="2"><i class="material-icons features icons1">location_on</i></div>
                         </div>
                         <div class="options">
                             <p class="options-header">explore around me</p class="">
-                            <div class="btn options" href="#myCarousel" data-slide-to="7"><i class="material-icons features icons1">explore</i></div>
+                            <div class="btn options feature3" href="#myCarousel" data-slide-to="7"><i class="material-icons features icons1">explore</i></div>
                         </div>
                     </div>
                 </div>
@@ -106,6 +118,7 @@
                                 <button class="btn-default radius" href="#myCarousel" data-slide-to="5" value="32186.9">20 miles</button>
                             </div>
                             <button class="button2 button" href="#myCarousel" data-slide="prev">last</button>
+                            <button class="button1 button" href="#myCarousel" data-slide-to="0">New Search</button>
                         </div>
                     </div>
                 </div>
@@ -137,6 +150,7 @@
                             <button class="btn-default lowPrice" href="#myCarousel" data-slide-to="4" value="4">$40 + </button>
                         </div>
                         <button class="button2 button" href="#myCarousel" data-slide-to="2">last</button>
+                        <button class="button1 button" href="#myCarousel" data-slide-to="0">New Search</button>
                     </div>
                 </div>
                 <!--  Max price filter for find by city -->
@@ -155,6 +169,7 @@
                             <button class="btn-default highPrice find_city go2" href="#map" data-slide-to="" value="4">$40+ </button>
                         </div>
                         <button class="button2 button" href="#myCarousel" data-slide-to="3">last</button>
+                        <button class="button1 button" href="#myCarousel" data-slide-to="0">New Search</button>
                     </div>
                 </div>
                 <!-- Min price filter for find random location -->
@@ -170,6 +185,7 @@
                         <button class="btn-default lowPrice" href="#myCarousel" data-slide-to="6" value="4">$40 + </button>
                         <br>
                         <button class="button2 button" href="#myCarousel" data-slide-to="1">last</button>
+                        <button class="button1 button" href="#myCarousel" data-slide-to="0">New Search</button>
                     </div>
                 </div>
                 <!-- Max price filter for finding random locations -->
@@ -185,6 +201,7 @@
                         <button class="btn-default highPrice go" href="#map" data-slide-to="" value="4">$40 + </button>
                         <br>
                         <button class="button2 button" href="#myCarousel" data-slide-to="1">last</button>
+                        <button class="button1 button" href="#myCarousel" data-slide-to="0">New Search</button>
                     </div>
                 </div>
                 <!-- Min price for searching nearby area -->
@@ -200,6 +217,7 @@
                             <button class="btn-default lowPrice" href="#myCarousel" data-slide-to="8" value="4">$40 + </button>
                         </div>
                         <button class="button2 button" href="#myCarousel" data-slide-to="0">last</button>
+                        <button class="button1 button" href="#myCarousel" data-slide-to="0">New Search</button>
                     </div>
                 </div>
                 <!--   High price for searching nearby area -->
@@ -218,46 +236,52 @@
                             <button class="btn-default highPrice go3" href="#map" data-slide-to="" value="4">$40+ </button>
                         </div>
                         <button class="button2 button" href="#myCarousel" data-slide-to="7">last</button>
+                        <button class="button1 button" href="#myCarousel" data-slide-to="0">New Search</button>
                     </div>
                 </div>
             </div>
-            <div class="on-load">
-                <div class="row">
-                    <div class="col-sm-12">
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 theMap text-center">
-                            <h2><div id="map"></div></h2>
-                            <div class="address"></div>
-                            <div class="rating"></div>
-                            <div class="price"></div>
-                        </div>
-                    </div>
-                    <div class="hi">
-                        <div class="row text-center">
-                            <div class="reveal"></div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="reveal2"></div>
-                        </div>
-                        <div class="reveal-btn">
-                            <button class="btn btn-primary reveal-btn">Reveal</button>
-                        </div>
-                        <br>
-                        <div class="or">or</div>
-                        <br>
-                        <div class="choose-new">
-                            <button class="btn btn-success choose-new-btn">Choose new Location</button>
-                        </div>
+        </div>
+        <div class="on-load">
+            <div class="row">
+                <div class="col-sm-12 thumbnail theMap text-center">
+                    <h2><div id="map"></div></h2>
+                    <br>
+                    <div class="move-me"></div>
+                </div>
+                <div class="col-sm-6 text-center random">
+                    <p class="address"></p>
+                    <p class="rating"></p>
+                    <p class="price"></p>
+                    <div class="reveal-btn">
+                        <button class="btn btn-primary reveal-btn">Reveal</button>
                     </div>
                 </div>
-                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-                <!-- Include all compiled plugins (below), or include individual files as needed -->
-                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkqpMeDoERUl49GFnohcDl4h2SxMgLhrA&libraries=places&callback=">
-                </script>
-                <script src="../js/app.js"></script>
+                <div class="col-sm-6 display-random random text-center">
+                    <div class="reveal"></div>
+                    <p class="name"></p>
+                    <div class="choose-new">
+                        <button class="btn btn-success choose-new-btn">Choose new Location</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row populate"></div>
+        <div class="footer-basic">
+            <footer>
+                <div class="social"><a href="https://github.com/bstahler123"><i class="icon ion-social-github"></i></a><a href="https://www.linkedin.com/in/bradley-anthony-60392b135/"><i class="icon ion-social-linkedin"></i></a>
+                    <a href="https://www.facebook.com/brad.stahler.9">Hi</a><a href="https://ucfjanvw.slack.com/team/bstahler123"><i class="fa fa-slack"></i></a></div>
+                <p class="copyright">© Bradley Stahler 2017</p>
+            </footer>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkqpMeDoERUl49GFnohcDl4h2SxMgLhrA&libraries=places&callback=">
+        </script>
+        <script src="../js/filter.js"></script>
+        <script src="../js/app.js"></script>
+        
 </body>
 
 </html>

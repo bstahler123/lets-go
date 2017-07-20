@@ -7,7 +7,7 @@ $(document).ready(function() {
     var select;
     var highPrice;
     var lowPrice;
-
+  
 
 
 
@@ -23,6 +23,11 @@ $(document).ready(function() {
     });
 
     function initMapByLocation() {
+
+
+        // setting color for custom marker
+        var pinColor = "6859ED";
+        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor);
 
 
 
@@ -46,7 +51,9 @@ $(document).ready(function() {
                 });
                 var marker = new google.maps.Marker({
                     position: uluru,
-                    map: map
+                    map: map,
+                    icon: pinImage,
+                    animation: google.maps.Animation.DROP
                 });
                 var request = {
                     location: uluru,
@@ -76,9 +83,9 @@ $(document).ready(function() {
                             var place = results[i];
                             console.log(results[i]);
                             console.log(pictures);
-                            $(".btn-circle1").html("<div class='btnHtml'>B</i></div>");
+                            $(".btn-circle1").html("<i class='material-icons nav-icon'>navigation</i>");
 
-                            pictures.appendTo($(".reveal"));
+                            pictures.appendTo($(".populate"));
 
                         }
                         var pick = 1 + Math.floor(Math.random() * results.length - 1);
@@ -102,6 +109,9 @@ $(document).ready(function() {
 
     function initMapNearMe() {
 
+        var pinColor = "6859ED";
+        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor);
+
 
 
 
@@ -121,7 +131,9 @@ $(document).ready(function() {
             });
             var marker = new google.maps.Marker({
                 position: uluru,
-                map: map
+                map: map,
+                icon: pinImage,
+                animation: google.maps.Animation.DROP
             });
             var request = {
                 location: uluru,
@@ -147,13 +159,13 @@ $(document).ready(function() {
 
                         });
                         var directions = "https://www.google.com/maps/dir//" + results[i].vicinity;
-                        var pictures = $("<div class='col-md-2 col-sm-4 col-xs-12 thumbnail multiPlaces'><div class='resPics'><img src='" + results[i].photos[0].getUrl({ 'maxWidth': 175, 'maxHeight': 175 }) + "'></div><div class='here'>Address:  " + results[i].vicinity + "Price:  " + results[i].price_level + "Rating:  " + results[i].rating + " </div><a href='" + directions + "' target='_blank'><div class='btn btn-primary btn-circle1'></div></a><div class='btn btn-info btn-circle2'></div><div class='btn btn-success btn-circle3'></div></div>");
+                        var pictures = $("<div class='col-md-2 col-sm-4 col-xs-12 thumbnail multiPlaces'><div class='resPics'><img src='" + results[i].photos[0].getUrl({ 'maxWidth': 185, 'maxHeight': 170 }) + "'></div><div class='here'>Address:  " + results[i].vicinity + "Price:  " + results[i].price_level + " name " + results[i].name + "Rating:  " + results[i].rating + " </div><a href='" + directions + "' target='_blank'><div class='btn btn-primary btn-circle1'></div></a><div class='btn btn-info btn-circle2'></div><div class='btn btn-success btn-circle3'></div></div>");
                         var place = results[i];
                         console.log(results[i]);
                         console.log(pictures);
                         $(".btn-circle1").html("<i class='material-icons nav-icon'>navigation</i>");
 
-                        pictures.appendTo($(".reveal"));
+                        pictures.appendTo($(".populate"));
 
                     }
                     var pick = 1 + Math.floor(Math.random() * results.length - 1);
@@ -178,16 +190,19 @@ $(document).ready(function() {
     $(document).on('click', '.go, .go2, .go3', function(event) {
 
 
-        $('html, body').animate({
+        $('html, body').delay(1000).animate({
             scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
+        }, 1000);
     });
 
     // Getting the distance selected by the user
-
+    $(".button1").on("click", function(){
+        $(".on-load").slideUp(500);
+    });
     $(".radius").on("click", function() {
         distance = $(this).val();
         console.log(distance);
+        
     });
 
     // Getting the Price range from the user
@@ -195,6 +210,8 @@ $(document).ready(function() {
     $(".lowPrice").on("click", function() {
         lowPrice = $(this).val();
         console.log(lowPrice);
+       
+
 
     });
 
@@ -204,6 +221,13 @@ $(document).ready(function() {
 
     });
 
+    
+
+
+
+
+
+
 
     // function to find random resturant by geo location
 
@@ -211,8 +235,8 @@ $(document).ready(function() {
 
         var pinColor = "6859ED";
         var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor);
-            
-      
+
+
 
         navigator.geolocation.getCurrentPosition(function(position) {
             console.log(position.coords.latitude, position.coords.longitude);
@@ -237,11 +261,11 @@ $(document).ready(function() {
                 map: map,
                 icon: pinImage,
                 animation: google.maps.Animation.DROP,
-               
-            });
-           
 
-          
+            });
+
+
+
             var request = {
                 location: uluru,
                 radius: distance,
@@ -262,7 +286,7 @@ $(document).ready(function() {
 
                     for (var i = 0; i < results.length; i++) {
 
-                        var pictures = $("<img src='" + results[i].photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 300 }) + "'>");
+                        var pictures = $("<img src='" + results[i].photos[0].getUrl({ 'maxWidth': 200, 'maxHeight': 200 }) + "'>");
                         var place = results[i];
                         console.log(results[i]);
 
@@ -277,6 +301,10 @@ $(document).ready(function() {
                     $(".price").html("Price:  " + select.price_level);
                     $(".rating").html("Rating:  " + select.rating);
                     console.log(results[pick]);
+                    var directions = "https://www.google.com/maps/dir//" + select.vicinity;
+                    var here = $("<a href='" + directions + "' target='_blank'><div class='btn btn-primary btn-circle1'></div></a>");
+                    here.appendTo($(".move-me"));
+                    $(".btn-circle1").html("<i class='material-icons nav-icon'>navigation</i>");
 
                     // If the request succeeds, draw the place location on
                     // the map as a marker, and register an event to handle a
@@ -298,9 +326,11 @@ $(document).ready(function() {
 
     $(".go").on("click", function() {
         initMap();
-        $(".on-load").show();
+        $(".on-load").slideDown(500);
         $(".reveal-btn").on("click", function() {
-            $(".reveal").html("<img src='" + select.photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 300 }) + "'>");
+            $(".reveal").fadeTo(1000, 1);
+            $(".reveal").html("<img src='" + select.photos[0].getUrl({ 'maxWidth': 200, 'maxHeight': 200 }) + "'>");
+
             $(".name").html(select.name);
             $(".reveal-btn").hide();
             $(".choose-new").show();
@@ -315,7 +345,7 @@ $(document).ready(function() {
         initMapNearMe();
         $(".on-load").show();
         $(".reveal-btn").on("click", function() {
-            $(".reveal").html("<img src='" + select.photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 300 }) + "'>");
+            $(".reveal").html("<img src='" + select.photos[0].getUrl({ 'maxWidth': 200, 'maxHeight': 200 }) + "'>");
             $(".name").html(select.name);
             $(".reveal-btn").hide();
             $(".choose-new").show();
@@ -345,6 +375,7 @@ $(document).ready(function() {
 
     $(".choose-new-btn").on("click", function() {
         initMap();
+        $(".reveal").css("display", "none");
         $(".reveal").html("");
         $(".name").html("Click to reveal destination.");
         $(".choose-new-btn").hide();
