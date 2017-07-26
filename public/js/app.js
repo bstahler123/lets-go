@@ -79,7 +79,7 @@ $(document).ready(function() {
 
                             });
                             var directions = "https://www.google.com/maps/dir//" + results[i].vicinity;
-                            var pictures = $("<div class='col-md-2 col-sm-4 col-xs-12 thumbnail multiPlaces'><div class='resPics'><img src='" + results[i].photos[0].getUrl({ 'maxWidth': 175, 'maxHeight': 175 }) + "'></div><div class='here'>Address:  " + results[i].vicinity + "Price:  " + results[i].price_level + "Rating:  " + results[i].rating + " </div><a href='" + directions + "' ><div class='btn btn-primary btn-circle1'></div></a><div class='btn btn-info btn-circle1'></div><div class='btn btn-success btn-circle1'></div></div>");
+                            var pictures = $("<div class='col-md-2 col-sm-4 col-xs-12 thumbnail multiPlaces'><div class='resPics'><img src='" + results[i].photos[0].getUrl({ 'maxWidth': 175, 'maxHeight': 175 }) + "'></div><div class='here'>Address:  " + results[i].vicinity + "<br>Price:  " + results[i].price_level + "<br>Rating:  " + results[i].rating + " </div><a href='" + directions + "' ><div class='btn btn-primary btn-circle1'></div></a><div class='btn btn-info btn-circle1'></div><div class='btn btn-success btn-circle1'></div></div>");
                             var place = results[i];
                             console.log(results[i]);
                             console.log(pictures);
@@ -198,6 +198,7 @@ $(document).ready(function() {
     // Getting the distance selected by the user
     $(".button1").on("click", function(){
         $(".on-load").slideUp(500);
+        
     });
     $(".radius").on("click", function() {
         distance = $(this).val();
@@ -302,7 +303,7 @@ $(document).ready(function() {
                     $(".rating").html("Rating:  " + select.rating);
                     console.log(results[pick]);
                     var directions = "https://www.google.com/maps/dir//" + select.vicinity;
-                    var here = $("<a href='" + directions + "' target='_blank'><div class='btn btn-primary btn-circle1'></div></a>");
+                    var here = $("<a href='" + directions + "' target='_blank'><div class='btn btn-primary btn-circle1 directions-random'></div></a>");
                     here.appendTo($(".move-me"));
                     $(".btn-circle1").html("<i class='material-icons nav-icon'>navigation</i>");
 
@@ -326,13 +327,16 @@ $(document).ready(function() {
 
     $(".go").on("click", function() {
         initMap();
+
         $(".on-load").slideDown(500);
+        $(".reveal-btn").hide();
+        $(".reveal-btn").fadeTo(5000, 1.0);
         $(".reveal-btn").on("click", function() {
             $(".reveal").fadeTo(1000, 1);
             $(".reveal").html("<img src='" + select.photos[0].getUrl({ 'maxWidth': 200, 'maxHeight': 200 }) + "'>");
 
             $(".name").html(select.name);
-            $(".reveal-btn").hide();
+            
             $(".choose-new").show();
             $(".choose-new-btn").show()
             $(".or").show();
@@ -343,32 +347,21 @@ $(document).ready(function() {
 
     $(".go3").on("click", function() {
         initMapNearMe();
-        $(".on-load").show();
-        $(".reveal-btn").on("click", function() {
-            $(".reveal").html("<img src='" + select.photos[0].getUrl({ 'maxWidth': 200, 'maxHeight': 200 }) + "'>");
-            $(".name").html(select.name);
-            $(".reveal-btn").hide();
-            $(".choose-new").show();
-            $(".choose-new-btn").show()
-            $(".or").show();
-
-        })
+        $(".random").hide();
+        $(".on-load").slideDown(500);
+      
+       
+         
 
     });
     // This is the button that inits the map for the location search by city name
 
     $(".go2").on("click", function() {
         $(".reveal").empty();
-        $(".on-load").show();
-        $(".reveal-btn").on("click", function() {
-            $(".reveal").html("<img src='" + select.photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 300 }) + "'>");
-            $(".name").html(select.name);
-            $(".reveal-btn").hide();
-            $(".choose-new").show();
-            $(".choose-new-btn").show()
-            $(".or").show();
-
-        })
+        $(".random").hide();
+        $(".on-load").slideDown(500);
+       
+       
     });
 
     // choose new button for the random resturant button
@@ -379,7 +372,7 @@ $(document).ready(function() {
         $(".reveal").html("");
         $(".name").html("Click to reveal destination.");
         $(".choose-new-btn").hide();
-        $(".reveal-btn").show();
-        $(".or").hide();
+        $(".reveal-btn").fadeTo(2000, 1.0);
+        
     });
 });
