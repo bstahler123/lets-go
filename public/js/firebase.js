@@ -124,7 +124,7 @@ FB.init({
     /**********************************************************************
      * TODO(Developer): Change the value below with your Facebook app ID. *
      **********************************************************************/
-    appId: '1737224106292372',
+    appId: '794400208816788',
     status: true,
     xfbml: true,
     version: 'v2.6'
